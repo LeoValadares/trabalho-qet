@@ -37,5 +37,3 @@ test('ArrayTraverser right -> left and not found', () => {
     let result = SearchFunctions.arrayTraverser(7, arr, arr.length, true, SearchFunctions.equals);
     expect(result).toEqual(new ResultType(SearchResult.NotFound, null, null));
 });
-
-test(')
