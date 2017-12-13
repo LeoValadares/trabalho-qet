@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for SearchFunctions.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> SearchFunctions.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>42/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.43% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>27/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>40/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const ResultType = require('./ResultType');
+const SearchResult = require('./SearchResultEnum');
+const SearchType = require('./SearchType');
+&nbsp;
+function equals (item, key) {
+    return item === key ? SearchResult.FoundExact : SearchResult.NotFound;
+}
+&nbsp;
+function lessThan (item, key) {
+    return item &lt; key ? SearchResult.FoundLess : SearchResult.NotFound;
+}
+&nbsp;
+function greaterThan (item, key) {
+    return item &gt; key ? SearchResult.FoundGreater : SearchResult.NotFound;
+}
+&nbsp;
+function arrayTraverser (key, items, size, reverseTraverse, searchFunction) {
+	let result = new ResultType();
+	let currPos = reverseTraverse ? size : 0;
+	let finishingPos = reverseTraverse ? 0 : size;
+	let traverseStep = reverseTraverse ? (i) =&gt; --i : (i) =&gt; ++i;
+&nbsp;
+	while(currPos != finishingPos) {
+		let searchFunctionResult = searchFunction(items[currPos], key);
+		if (searchFunctionResult !== SearchResult.NotFound) {
+			result.searchResult = searchFunctionResult;
+			result.resultIndex = currPos;
+			result.resultValue = items[currPos];
+			return result;
+		}
+		currPos = traverseStep(currPos);
+	}
+    return result;
+}
+&nbsp;
+function searchArrays (key, items, size, ascending, type) {
+    //evitando lógica complexa de guardar estado de iteração anterior para descobrir o maior menor
+    //e menor maior fazendo hack entre ascending, tipo de busca e sentido de iteração do array
+    if (type === SearchType.LessThan) {
+        return arrayTraverser(key, items, size, ascending, lessThan);
+    }
+    if (type === SearchType.LessThanEquals) {
+        let equalsResult = arrayTraverser(key, items, size, !ascending, equals);
+        if (equalsResult.searchResult === SearchResult.NotFound)
+            return arrayTraverser(key, items, size, ascending, lessThan);
+        return equalsResult;
+    }
+    if (type === SearchType.Equals) {
+        return arrayTraverser(key, items, size, !ascending, equals);
+    }
+    if (type === SearchType.GreaterThan) {
+        return arrayTraverser(key, items, size, !ascending, greaterThan);
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (type === SearchType.GreaterThanEquals) {
+        let equalsResult = arrayTraverser(key, items, size, !ascending, equals);
+        if (equalsResult.searchResult === SearchResult.NotFound)
+            return arrayTraverser(key, items, size, !ascending, greaterThan);
+        return equalsResult;
+    }
+} 
+&nbsp;
+module.exports.equals = equals;
+module.exports.lessThan = lessThan;
+module.exports.greaterThan = greaterThan;
+module.exports.arrayTraverser = arrayTraverser;
+module.exports.searchArrays = searchArrays;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Dec 13 2017 03:03:41 GMT-0200 (-02)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

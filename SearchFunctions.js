@@ -16,8 +16,8 @@ function greaterThan (item, key) {
 
 function arrayTraverser (key, items, size, reverseTraverse, searchFunction) {
 	let result = new ResultType();
-	let currPos = reverseTraverse ? size - 1 : 0;
-	let finishingPos = reverseTraverse ? 0 : size - 1;
+	let currPos = reverseTraverse ? size : 0;
+	let finishingPos = reverseTraverse ? 0 : size;
 	let traverseStep = reverseTraverse ? (i) => --i : (i) => ++i;
 
 	while(currPos != finishingPos) {
