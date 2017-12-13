@@ -15,28 +15,21 @@ function greaterThan (key, item) {
 }
 
 function arrayTraverser (key, items, size, reverseTraverse, searchFunction) {
-    let result = new ResultType();
-    if(!reverseTraverse) {
-        for (let i = 0; i < size; i++) {
-            let searchFunctionResult = searchFunction(key, items[i]);
-            if (searchFunctionResult !== SearchResult.NotFound) {
-                result.searchResult = searchFunctionResult;
-                result.resultIndex = i;
-                result.resultValue = items[i];
-                return result;
-            }
-        }
-    } else {
-        for (let i = size - 1; i >= 0; i--) {
-            let searchFunctionResult = searchFunction(key, items[i]);
-            if (searchFunctionResult !== SearchResult.NotFound) {
-                result.searchResult = searchFunctionResult;
-                result.resultIndex = i;
-                result.resultValue = items[i];
-                return result;
-            }
-        }
-    }
+	let result = new ResultType();
+	let currPos = reverseTraverse ? size - 1 : 0;
+	let finishingPos = reverseTraverse ? 0 : size - 1;
+	let traverseStep = reverseTraverse ? (i) => --i : (i) => ++i;
+
+	while(currPos != finishingPos) {
+		let searchFunctionResult = searchFunction(key, items[currPos]);
+		if (searchFunctionResult !== SearchResult.NotFound) {
+			result.searchResult = searchFunctionResult;
+			result.resultIndex = currPos;
+			result.resultValue = items[currPos];
+			return result;
+		}
+		currPos = traverseStep(currPos);
+	}
     return result;
 }
 
@@ -47,19 +40,19 @@ function searchArrays (key, items, size, ascending, type) {
         return arrayTraverser(key, items, size, ascending, lessThan);
     }
     if (type === SearchType.LessThanEquals) {
-        let equalsResult = arrayTraverser(key, items, size, ascending, equals);
+        let equalsResult = arrayTraverser(key, items, size, !ascending, equals);
         if (equalsResult.searchResult === SearchResult.NotFound)
             return arrayTraverser(key, items, size, ascending, lessThan);
         return equalsResult;
     }
     if (type === SearchType.Equals) {
-        return arrayTraverser(key, items, size, ascending, equals);
+        return arrayTraverser(key, items, size, !ascending, equals);
     }
     if (type === SearchType.GreaterThan) {
         return arrayTraverser(key, items, size, !ascending, greaterThan);
     }
     if (type === SearchType.GreaterThanEquals) {
-        let equalsResult = arrayTraverser(key, items, size, ascending, equals);
+        let equalsResult = arrayTraverser(key, items, size, !ascending, equals);
         if (equalsResult.searchResult === SearchResult.NotFound)
             return arrayTraverser(key, items, size, !ascending, greaterThan);
         return equalsResult;
@@ -68,4 +61,4 @@ function searchArrays (key, items, size, ascending, type) {
 
 var arr = [1,2,3,4,5,6];
 //var arr = [6,5,4,3,2,1];
-console.log(searchArrays(7,arr,6,true,SearchType.GreaterThanEquals));
+console.log(searchArrays(0,arr,6,true,SearchType.GreaterThanEquals));
